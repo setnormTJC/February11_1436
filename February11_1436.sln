@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeginningTopic5-loops", "BeginningTopic5-loops\BeginningTopic5-loops.vcxproj", "{E647AD55-CE1D-424A-86A8-D0746596686C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Previous student submission of rock paper scissors", "Previous student submission of rock paper scissors\Previous student submission of rock paper scissors.vcxproj", "{DB481D77-6E2C-419D-94C3-EE3FDAC96613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,19 @@ Global
 		{E647AD55-CE1D-424A-86A8-D0746596686C}.Release|x64.Build.0 = Release|x64
 		{E647AD55-CE1D-424A-86A8-D0746596686C}.Release|x86.ActiveCfg = Release|Win32
 		{E647AD55-CE1D-424A-86A8-D0746596686C}.Release|x86.Build.0 = Release|Win32
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Debug|x64.ActiveCfg = Debug|x64
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Debug|x64.Build.0 = Debug|x64
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Debug|x86.ActiveCfg = Debug|Win32
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Debug|x86.Build.0 = Debug|Win32
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Release|x64.ActiveCfg = Release|x64
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Release|x64.Build.0 = Release|x64
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Release|x86.ActiveCfg = Release|Win32
+		{DB481D77-6E2C-419D-94C3-EE3FDAC96613}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0C6E445-8847-4B78-89E2-0A1188706F2F}
 	EndGlobalSection
 EndGlobal
