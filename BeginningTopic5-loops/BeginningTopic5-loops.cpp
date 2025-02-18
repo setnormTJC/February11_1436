@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include<random>
 #include<string> 
 
 #include<Windows.h>
@@ -56,7 +57,7 @@ void demoFinalCountdown()
     system("finalCountdown.wav");
 }
 
-void demoPowersOf2()
+void demoPowersOf2() //a function like f(x) = x^2 
 {
     int powerOf2 = 2; 
 
@@ -74,15 +75,32 @@ void demoLoopUntilBreak()
 
 void playHiLoGame()
 {
-    int correctNumber = 12; 
+    std::random_device randomSeed; //like apple seeds? 
+    std::mt19937 randomNumberGenerator(randomSeed()); //what is this madness? 
+
+    int correctNumber = randomNumberGenerator() % 100; //make this randomly-generated (for funsies) 
+
+    std::cout << "Are you a cheater?\n";
+    std::string cheater; 
+    std::getline(std::cin, cheater);
+    if (cheater == "yes")
+    {
+        std::cout << "The correct number is " << correctNumber << "\n";
+    }
 
     int usersGuess; 
 
     std::cout << "Guess the number ... (number is between 0 and 100)\n";
     std::cin >> usersGuess; 
 
-    while (usersGuess != correctNumber)
+    int numberOfGuesses = 0; 
+
+    while ( (usersGuess != correctNumber) 
+        &&
+        (numberOfGuesses < 8))
     {
+        numberOfGuesses = numberOfGuesses + 1; 
+
         if (usersGuess > correctNumber)
         {
             std::cout << "Too high - guess again\n";
@@ -93,13 +111,20 @@ void playHiLoGame()
             std::cout << "Too LOW - guess again\n";
         }
 
-        else
-        {
-            std::cout << "CORRECT!\n";
-        }
-
         std::cin >> usersGuess;
+    } //end while loop (the close brace) 
+
+    if (usersGuess == correctNumber)
+    {
+        std::cout << "Winnah, winnah, chicken dinnah!\n";
     }
+
+    else
+    {
+        std::cout << "Too many guesses - correct number was: " << correctNumber << "\n";
+    }
+
+
 
     //else
     //{
@@ -107,14 +132,54 @@ void playHiLoGame()
     //}
 }
 
+void demoRandomNumberGeneration()
+{
+    std::random_device randomSeed; //like apple seeds? 
+    std::mt19937 randomNumberGenerator(randomSeed()); //what is this madness? 
+    //19,937 is a PRIME number (not Amazon Prime) -> and primes are "special" 
+    //MT - Mersenne Twister ->Mersenne is a mathematician
 
+    std::cout.imbue(std::locale(""));
+    std::cout << "Is this a random number? " << randomNumberGenerator() % 100 << "\n";
+    std::cout << "Is this a random number? " << randomNumberGenerator() % 100 << "\n";
+    std::cout << "Is this a random number? " << randomNumberGenerator() % 100 << "\n";
+    std::cout << "Is this a random number? " << randomNumberGenerator() % 100 << "\n";
+    std::cout << "Is this a random number? " << randomNumberGenerator() % 100 << "\n";
+}
+
+/*this prints all of the numbers betwixt 0 and 9'999 (inclusive)*/ //[1, 2] _> (1, 2]
+void demoForLoop()
+{
+    for (int i = 0; i < 10'000; ++i)
+    {
+        std::cout << "i is (am): " << i << "\n";
+    }
+}
+
+void demoPrintingASCIICharacters()
+{
+    for (char currentLetter = '!'; currentLetter < 'z'; ++currentLetter)
+    {
+        //this is the BODY of the loop 
+        std::cout << currentLetter; 
+    }
+
+    std::cout << "\n";
+}
 
 int main()
 {
-    playHiLoGame(); 
+    demoPrintingASCIICharacters(); 
+
+    //demoForLoop(); 
+
+    //demoRandomNumberGeneration(); 
+
+    //playHiLoGame(); 
     //demoPowersOf2(); 
     //demoLoopUntilPressQuit(); 
     //demoFinalCountdown(); 
+    
 
 }
 
