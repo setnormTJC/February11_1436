@@ -1,10 +1,11 @@
 // BeginningTopic5-loops.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <iomanip>
 #include <iostream>
+#include <locale>
 #include<random>
 #include<string> 
-
 #include<Windows.h>
 
 
@@ -167,9 +168,90 @@ void demoPrintingASCIICharacters()
     std::cout << "\n";
 }
 
+
+
+void demoPrintingUnicodeCharacters()
+{
+    system("chcp 65001");
+    std::locale::global(std::locale("")); // Set locale for proper Unicode handling
+
+    for (char32_t currentChar = 0x0000; currentChar <= 0x10FFFF; ++currentChar)
+    {
+        //if (currentChar < 0xD800 || currentChar > 0xDFFF) // Skip surrogate pairs
+        //{
+            std::wcout << static_cast<wchar_t>(currentChar) << ' ';
+        //}
+    }
+
+    std::wcout << std::endl;
+}
+
+void demoNestedLoop_withMultiplicationTable()
+{
+
+    //making a multiplication table:
+    constexpr int NUMBER_OF_ROWS = 13; 
+    constexpr int NUMBER_OF_COLS = 14;
+
+    for (int rowCounter = 1; rowCounter <= NUMBER_OF_ROWS; ++rowCounter)
+    {
+        for (int columnCounter = 1; columnCounter <= NUMBER_OF_COLS; ++columnCounter)
+        {
+            std::cout << std::left << std::setw(4) << rowCounter * columnCounter; 
+        }
+        std::cout << "\n"; 
+    }
+
+}
+
+void demoNestedLoop_With3LetterBrutePasswordCrack()
+{
+    std::string correctPassword = ""; //the length of this is 0
+    while (correctPassword.length() != 3)
+    {
+        std::cout << "enter a password with no more than 3 letters, and only lowercase a - z allowed: \n";
+        std::getline(std::cin, correctPassword);
+        
+    }
+
+    
+
+    std::string possiblePassword = "111"; //empty string 
+
+    int loopCounter = 0; 
+    for (char firstLetter = 'a'; firstLetter <= 'z'; ++firstLetter)
+    {
+        for (char secondLetter = 'a'; secondLetter <= 'z'; ++secondLetter)
+        {
+            for (char thirdLetter = 'a'; thirdLetter <= 'z'; ++thirdLetter)
+            {
+                //std::cout << firstLetter << secondLetter << thirdLetter << "\n";
+                possiblePassword[0] = firstLetter; 
+                possiblePassword[1] = secondLetter; 
+                possiblePassword[2] = thirdLetter; //this is ARRAY notation 
+                                                    //(the square brackets are called the "index operator"
+                if (possiblePassword == correctPassword)
+                {
+                    std::cout << "Found the correct password!\n";
+                    std::cout << "In this many guesses: " << loopCounter << "\n";
+                    system("pause"); 
+                }
+
+                loopCounter++; 
+            } //end innermost loop 
+        } //end middle loop
+    } //end outer loop 
+
+    std::cout << "The number of passwords we tried (using \"Brute force\" is: " << loopCounter << "\n";
+}
+
 int main()
 {
-    demoPrintingASCIICharacters(); 
+    demoNestedLoop_With3LetterBrutePasswordCrack(); 
+    //demoNestedLoop_withMultiplicationTable(); 
+
+    //demoPrintingUnicodeCharacters(); 
+    //demoPrintingASCIICharacters(); 
 
     //demoForLoop(); 
 
