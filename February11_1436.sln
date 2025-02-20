@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoingSetWidth", "DemoingS
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Some student assignment submissions", "Some student assignment submissions\Some student assignment submissions.vcxproj", "{CF69A1BC-3B6F-4A9A-8BBB-B91F07E331CE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Some dictionary word analysis", "Ending topic 5 - loops\Ending topic 5 - loops.vcxproj", "{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{CF69A1BC-3B6F-4A9A-8BBB-B91F07E331CE}.Release|x64.Build.0 = Release|x64
 		{CF69A1BC-3B6F-4A9A-8BBB-B91F07E331CE}.Release|x86.ActiveCfg = Release|Win32
 		{CF69A1BC-3B6F-4A9A-8BBB-B91F07E331CE}.Release|x86.Build.0 = Release|Win32
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Debug|x64.ActiveCfg = Debug|x64
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Debug|x64.Build.0 = Debug|x64
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Debug|x86.ActiveCfg = Debug|Win32
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Debug|x86.Build.0 = Debug|Win32
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Release|x64.ActiveCfg = Release|x64
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Release|x64.Build.0 = Release|x64
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Release|x86.ActiveCfg = Release|Win32
+		{22B2DA7D-1078-4817-8C9D-B26CACCBFE99}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
